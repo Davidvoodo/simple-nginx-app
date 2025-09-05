@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: presync-job
+  annotations:
+    argocd.argoproj.io/hook: PreSync
+spec:
+  template:
+    spec:
+      containers:
+      - name: echo
+        image: busybox
+        command: ["/bin/sh", "-c"]
+        args: ["echo '🚀 PreSync Hook: Starting deployment of Task 4'"]
+      restartPolicy: Never
+  backoffLimit: 0
