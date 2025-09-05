@@ -10,3 +10,22 @@ service:
   port: 80
 
 resources: {}
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+
+serviceAccount:
+  create: true
+  name: ""
+
+podAnnotations: {}
+podLabels: {}
+securityContext: {}
+volumeMounts: []
+volumes: []
+nodeSelector: {}
+affinity: {}
+tolerations: []
